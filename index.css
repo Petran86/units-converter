@@ -1,3 +1,17 @@
+:root {
+    --base-color: rgb(245, 245, 245);
+    --base-variant: rgb(255, 255, 255);
+    --primary-color: rgb(90, 83, 123);
+    --text-color: rgb(53, 53, 53);
+}
+
+.darkmode {
+    --base-color: #1F2937;
+    --base-variant: #273549;
+    --primary-color: #CCC1FF;
+    --text-color: white;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -17,12 +31,12 @@ h1 {
 
 h2 {
     font-weight: 600;
-    color: #5A537B;
+    color: var(--primary-color);
     margin-bottom: 10px;
 }
 
 p {
-    color: #353535;
+    color: var(--text-color);
 }
 
 ul {
@@ -41,7 +55,7 @@ input {
     margin-bottom: 20px;
     background-color: inherit;
     color: inherit;
-    border: 1px solid #B295FF;
+    border: 2px solid #B295FF;
     border-radius: 5px;
     font-weight: 900;
     font-size: 32px;
@@ -69,13 +83,38 @@ button:hover {
 }
 
 main {
-    background-color: #F4F4F4;
+    background-color: var(--base-color);
     padding: 20px;
     text-align: center;
 }
 
 .list-measurements {
-    background-color: white;
+    background-color: var(--base-variant);
     margin: 20px 0;
     padding: 20px 30px;
+}
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+}
+
+#theme-switch svg:last-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+    display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+    display: block;
 }
